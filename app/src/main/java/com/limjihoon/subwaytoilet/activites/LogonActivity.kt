@@ -24,6 +24,7 @@ class LogonActivity : AppCompatActivity() {
         binding.toolvar.setNavigationOnClickListener{finish()}
 
         binding.btnLogind.setOnClickListener { clickBtn() }
+        binding.btnSignup.setOnClickListener { clickBtn2() }
     }
     private fun clickBtn(){
         val name = binding.layoutInputId.editText!!.text.toString()
@@ -48,5 +49,10 @@ class LogonActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun clickBtn2(){
+        startActivity(Intent(this,SginupActivity::class.java))
+        finish()
     }
 }
