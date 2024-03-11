@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menu_first" android:title="내위치" android:icon="@color/white"/>
+    <item android:id="@+id/menu_secund" android:title="글작성" android:icon="@color/white"/>
+    <item android:id="@+id/menu_third" android:title="게시판" android:icon="@color/white"/>
+    <item android:id="@+id/menu_forth" android:title="모든역 보기" android:icon="@color/white"/>
+
+</menu>

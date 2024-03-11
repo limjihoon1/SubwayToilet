@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource"
+    app:cardElevation="4dp"
+    android:backgroundTint="@color/white"
+    android:layout_margin="16dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp">
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="역이름 :"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+
+        />
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="asdfdfklsldfjhls"
+            android:layout_below="@id/tv_name"
+            android:layout_alignParentRight="true"/>
+        <TextView
+            android:id="@+id/tv_inout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="asdfdfklsldfjhls"
+            android:layout_below="@id/tv_msg"
+            android:layout_alignParentRight="true"/>
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="asdfdfklsldfjhls"
+            android:layout_below="@id/tv_inout"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

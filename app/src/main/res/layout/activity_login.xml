@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.MainActivity">
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="내가 제일 급해"
+        android:textStyle="bold"
+        android:textSize="48sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80sp"
+        android:textColor="@color/black"
+        android:padding="16dp"
+        android:fontFamily="@font/aaa"/>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/wc"
+        android:layout_below="@id/tv_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="   앱 둘러보기   "
+        android:textSize="24sp"
+        android:background="@drawable/bg_btn_w"
+        android:layout_below="@id/icon"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/tvlo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="간편 로그인"
+        android:textSize="16sp"
+        android:layout_below="@id/tv_go"
+        android:layout_marginTop="80dp"/>
+
+    <LinearLayout
+        android:id="@+id/layout_lo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvlo"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/icon_kakako"
+            android:layout_marginLeft="16dp"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/icon_google"
+            android:layout_marginLeft="16dp"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/icon_naver"
+            android:layout_marginLeft="16dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/layout_lo"
+        android:layout_marginTop="24dp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="로그인 하기"
+            android:background="@drawable/bg_btn_ww"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginStart="80dp"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/tv_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="회원가입 하기"
+            android:background="@drawable/bg_btn_ww"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="80dp"
+            android:layout_marginStart="80dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

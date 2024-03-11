@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "391493875265",
+    "project_id": "najailgupha",
+    "storage_bucket": "najailgupha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391493875265:android:60946c4e932bb78cae38c0",
+        "android_client_info": {
+          "package_name": "com.limjihoon.nagajeilguqhalim"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgJZ86wWnbkxa2tN4RUmRDn_H3Y9fsMEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391493875265:android:13a2605aa851fea5ae38c0",
+        "android_client_info": {
+          "package_name": "com.limjihoon.subwaytoilet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgJZ86wWnbkxa2tN4RUmRDn_H3Y9fsMEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
