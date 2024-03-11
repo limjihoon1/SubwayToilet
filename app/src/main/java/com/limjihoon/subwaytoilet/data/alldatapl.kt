@@ -1,7 +1,7 @@
 package com.limjihoon.subwaytoilet.data
 
 data class alldatapl(var service:service)
-data class service(var dtlLoc:String,var exitNo:String,var gateInotDvNm:String,var stinFlor:String)
+data class service(var dtlLoc:String,var exitNo:String,var gateInotDvNm:String,var stinFlor:Int)
 
 data class KakaoSearchPlaceResponse(var meta:MetaOfPlace , var documents:List<DocumentOfPlace>)
 data class MetaOfPlace(var total_count:Int,var pageable_count:Int ,var is_end:Boolean)

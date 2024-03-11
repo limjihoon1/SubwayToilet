@@ -7,6 +7,7 @@ import android.net.DnsResolver.Callback
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -30,6 +31,7 @@ import com.limjihoon.subwaytoilet.network.RetrofitHelper
 import com.limjihoon.subwaytoilet.network.RetrofitService
 import retrofit2.Call
 import retrofit2.Response
+import retrofit2.http.Query
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -97,6 +99,22 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun Serch(){
+
+        val retrofit=RetrofitHelper.getRetrofitAll("https://openapi.kric.go.kr")
+        val retrofitService =retrofit.create(RetrofitService::class.java)
+        val call = retrofitService.dataget("json","S1","3","322")
+        call.enqueue(object :retrofit2.Callback<alldatapl>{
+            override fun onResponse(call: Call<alldatapl>, response: Response<alldatapl>) {
+                val s=response.body()
+                AlertDialog.Builder(this@MainActivity).setMessage("$s").create().show()
+            }
+
+            override fun onFailure(call: Call<alldatapl>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "실패~!~", Toast.LENGTH_SHORT).show()
+                Log.d("aaa",t.message.toString())
+            }
+
+        })
 //        Toast.makeText(this, "$dataall\n" +"${myLocation?.longitude} ,${myLocation?.latitude}", Toast.LENGTH_SHORT).show()
 //        val retrofit = RetrofitHelper.getRetrofitAll("oiletopenapi/convenientInfo/stationT?serviceKey=")
 //        val requestServices = retrofit.create(RetrofitService::class.java)
@@ -116,5 +134,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     var dataall =""
+
+
 
 }

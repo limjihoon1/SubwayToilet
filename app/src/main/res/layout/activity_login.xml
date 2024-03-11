@@ -18,7 +18,7 @@
         android:layout_marginTop="80sp"
         android:textColor="@color/black"
         android:padding="16dp"
-        android:fontFamily="@font/aaa"/>
+        android:fontFamily="@font/fronst"/>
 
     <ImageView
         android:id="@+id/icon"
