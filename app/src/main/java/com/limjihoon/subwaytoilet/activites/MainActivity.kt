@@ -44,6 +44,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     var myLocation:Location?=null
     val locationProviderClient: FusedLocationProviderClient by lazy { LocationServices.getFusedLocationProviderClient(this) }
+    var q = "S1"
+    var w = "3"
+    var e = "322"
 
 
 
@@ -80,7 +83,12 @@ class MainActivity : AppCompatActivity() {
         }else{
             startLast()
         }
+        binding.btn.setOnClickListener {
+            placeSearch()
+
+        }
     }
+
 
     private fun startLast(){
         val request:LocationRequest=LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY,1000).build()
@@ -105,10 +113,12 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
     private fun Serch(){
 
         thread {
-            val sival ="DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=S1&lnCd=3&stinCd=322"
+            val sival ="DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=$q&lnCd=$w&stinCd=$e"
             val searchUrl= "https://openapi.kric.go.kr/openapi/convenientInfo/stationToilet?serviceKey=$2a$10$"+sival
             val url=URL(searchUrl)
             val conneckt=url.openConnection() as HttpsURLConnection
@@ -145,5 +155,24 @@ class MainActivity : AppCompatActivity() {
 //           }
 //
 //       } )
+
+    }
+    private fun placeSearch(){
+        var r=binding.et.text?.toString()
+        if (r==null){
+            q="s1"
+            w="3"
+            e="322"
+        }else if (r=="서울역"){
+            q="AR"
+            w="A1"
+            e="A01"
+        } else if (r=="공덕역"){
+            q="AR"
+            w="A1"
+            e="A02"
+        }
+        r=null
+        startLast()
     }
 }
