@@ -171,8 +171,927 @@ class MainActivity : AppCompatActivity() {
             q="AR"
             w="A1"
             e="A02"
+        }else if (r=="공덕"){
+            q="AR"
+            w="A1"
+            e="A02"
+        }else if (r=="홍대입구"){
+            q="AR"
+            w="A1"
+            e="A03"
+            //////////////////////
+        }else if (r=="디지털미티어시티"){
+            q="AR"
+            w="A1"
+            e="A04"
+        }else if (r=="마곡나루"){
+            q="AR"
+            w="A1"
+            e="A042"
+        }else if (r=="김포공항"){
+            q="AR"
+            w="A1"
+            e="A05"
+        }else if (r=="계양"){
+            q="AR"
+            w="A1"
+            e="A06"
+        }else if (r=="검앙"){
+            q="AR"
+            w="A1"
+            e="A07"
+        }else if (r=="청라국제도시"){
+            q="AR"
+            w="A1"
+            e="A071"
+        }else if (r=="영종"){
+            q="AR"
+            w="A1"
+            e="A072"
+        }else if (r=="운서"){
+            q="AR"
+            w="A1"
+            e="A08"
+        }else if (r=="공항화물청사"){
+            q="AR"
+            w="A1"
+            e="A09"
+        }else if (r=="인천공항1터미널"){
+            q="AR"
+            w="A1"
+            e="A10"
+        }else if (r=="인천공한2터미널"){
+            q="AR"
+            w="A1"
+            e="A11"
+        }else if (r=="논현"){
+            q="DX"
+            w="D1"
+            e="4305"
+        }else if (r=="신논현"){
+            q="DX"
+            w="D1"
+            e="4306"
+        }else if (r=="강남"){
+            q="DX"
+            w="D1"
+            e="4307"
+        }else if (r=="양재"){
+            q="DX"
+            w="D1"
+            e="4308"
+        }else if (r=="양재시민의숲"){
+            q="DX"
+            w="D1"
+            e="4309"
+        }else if (r=="청계산입구"){
+            q="DX"
+            w="D1"
+            e="4310"
+        }else if (r=="판교"){
+            q="DX"
+            w="D1"
+            e="4311"
+        }else if (r=="정자"){
+            q="DX"
+            w="D1"
+            e="4312"
+        }else if (r=="성북"){
+            q="DX"
+            w="D1"
+            e="4316"
+        }else if (r=="상현"){
+            q="DX"
+            w="D1"
+            e="4317"
+        }else if (r=="광교중앙"){
+            q="DX"
+            w="D1"
+            e="4318"
+        }else if (r=="광교"){
+            q="DX"
+            w="D1"
+            e="4319"
+        }else if (r=="신사"){
+            q="DX"
+            w="D1"
+            e="D04"
+        }else if (r=="미금"){
+            q="DX"
+            w="D1"
+            e="D13"
+        }else if (r=="동천"){
+            q="DX"
+            w="D1"
+            e="D14"
+        }else if (r=="수지구청"){
+            q="DX"
+            w="D1"
+            e="D15"
+        }else if (r=="기흥"){
+            q="EV"
+            w="E1"
+            e="Y110"
+        }else if (r=="강남대"){
+            q="EV"
+            w="E1"
+            e="Y111"
+        }else if (r=="지석"){
+            q="EV"
+            w="E1"
+            e="Y112"
+        }else if (r=="어정"){
+            q="EV"
+            w="E1"
+            e="Y113"
+        }else if (r=="동백"){
+            q="EV"
+            w="E1"
+            e="Y114"
+        }else if (r=="초당"){
+            q="EV"
+            w="E1"
+            e="Y115"
+        }else if (r=="삼가"){
+            q="EV"
+            w="E1"
+            e="Y116"
+        }else if (r=="용인대"){
+            q="EV"
+            w="E1"
+            e="Y117"
+        }else if (r=="시청용인대") {
+            q = "EV"
+            w = "E1"
+            e = "Y117"
+        }else if (r=="시청 용인대") {
+            q = "EV"
+            w = "E1"
+            e = "Y117"
+        }else if (r=="명지대"){
+            q="EV"
+            w="E1"
+            e="Y118"
+        }else if (r=="김량장"){
+            q="EV"
+            w="E1"
+            e="Y119"
+        }else if (r=="운동장송담대"){
+            q="EV"
+            w="E1"
+            e="Y120"
+        }else if (r=="운동장 송담대"){
+            q="EV"
+            w="E1"
+            e="Y120"
+        }else if (r=="송담대"){
+            q="EV"
+            w="E1"
+            e="Y120"
+        }else if (r=="고진"){
+            q="EV"
+            w="E1"
+            e="Y121"
+        }else if (r=="보평"){
+            q="EV"
+            w="E1"
+            e="Y122"
+        }else if (r=="둔전"){
+            q="EV"
+            w="E1"
+            e="Y123"
+        }else if (r=="전대"){
+            q="EV"
+            w="E1"
+            e="Y124"
+        }else if (r=="에버랜드"){
+            q="EV"
+            w="E1"
+            e="Y124"
+        }else if (r=="전대 에버랜드"){
+            q="EV"
+            w="E1"
+            e="Y124"
+        }else if (r=="전대애버랜드"){
+            q="EV"
+            w="E1"
+            e="Y124"
+        }else if (r=="양촌"){
+            q="GM"
+            w="G1"
+            e="G100"
+        }else if (r=="구래"){
+            q="GM"
+            w="G1"
+            e="G101"
+        }else if (r=="마산"){
+            q="GM"
+            w="G1"
+            e="G102"
+        }else if (r=="장기"){
+            q="GM"
+            w="G1"
+            e="G103"
+        }else if (r=="운양"){
+            q="GM"
+            w="G1"
+            e="G104"
+        }else if (r=="걸포북변"){
+            q="GM"
+            w="G1"
+            e="G105"
+        }else if (r=="사우"){
+            q="GM"
+            w="G1"
+            e="G106"
+        }else if (r=="김포시청"){
+            q="GM"
+            w="G1"
+            e="G106"
+        }else if (r=="풍무"){
+            q="GM"
+            w="G1"
+            e="G107"
+        }else if (r=="고촌"){
+            q="GM"
+            w="G1"
+            e="G108"
+        }else if (r=="김포공항 용인"){
+            q="GM"
+            w="G1"
+            e="G109"
+        }else if (r=="인천공항1터미널 자기부상"){
+            q="IA"
+            w="M1"
+            e="G101"
+        }else if (r=="장기주차장"){
+            q="IA"
+            w="M1"
+            e="G102"
+        }else if (r=="합동청사"){
+            q="IA"
+            w="M1"
+            e="G103"
+        }else if (r=="파라다이스시티"){
+            q="IA"
+            w="M1"
+            e="G104"
+        }else if (r=="워터파크"){
+            q="IA"
+            w="M1"
+            e="G105"
+        }else if (r=="용유"){
+            q="IA"
+            w="M1"
+            e="G106"
+        }else if (r=="까치울"){
+            q="IC"
+            w="7"
+            e="751"
+        }else if (r=="부천종합운동장"){
+            q="IC"
+            w="7"
+            e="752"
+        }else if (r=="춘의"){
+            q="IC"
+            w="7"
+            e="753"
+        }else if (r=="신중동"){
+            q="IC"
+            w="7"
+            e="754"
+        }else if (r=="부천시청"){
+            q="IC"
+            w="7"
+            e="755"
+        }else if (r=="상동"){
+            q="IC"
+            w="7"
+            e="756"
+        }else if (r=="삼산체육관"){
+            q="IC"
+            w="7"
+            e="757"
+        }else if (r=="굴포천"){
+            q="IC"
+            w="7"
+            e="758"
+        }else if (r=="부평구청"){
+            q="IC"
+            w="7"
+            e="759"
+        }else if (r=="산곡"){
+            q="IC"
+            w="7"
+            e="760"
+        }else if (r=="석남"){
+            q="IC"
+            w="7"
+            e="761"
+        }else if (r=="인천계양"){
+            q="IC"
+            w="I1"
+            e="110"
+        }else if (r=="귤현"){
+            q="IC"
+            w="I1"
+            e="111"
+        }else if (r=="박촌"){
+            q="IC"
+            w="I1"
+            e="112"
+        }else if (r=="임학"){
+            q="IC"
+            w="I1"
+            e="113"
+        }else if (r=="계산"){
+            q="IC"
+            w="I1"
+            e="114"
+        }else if (r=="경인교대입구"){
+            q="IC"
+            w="I1"
+            e="115"
+        }else if (r=="작전"){
+            q="IC"
+            w="I1"
+            e="116"
+        }else if (r=="갈산"){
+            q="IC"
+            w="I1"
+            e="117"
+        }else if (r=="인천부평구청"){
+            q="IC"
+            w="I1"
+            e="118"
+        }else if (r=="부평시장"){
+            q="IC"
+            w="I1"
+            e="119"
+        }else if (r=="부평"){
+            q="IC"
+            w="I1"
+            e="120"
+        }else if (r=="동수"){
+            q="IC"
+            w="I1"
+            e="121"
+        }else if (r=="부평삼거리"){
+            q="IC"
+            w="I1"
+            e="122"
+        }else if (r=="간석오거리"){
+            q="IC"
+            w="I1"
+            e="123"
+        }else if (r=="인천시청"){
+            q="IC"
+            w="I1"
+            e="124"
+        }else if (r=="예술회관"){
+            q="IC"
+            w="I1"
+            e="125"
+        }else if (r=="인천터미널"){
+            q="IC"
+            w="I1"
+            e="126"
+        }else if (r=="문학경기장"){
+            q="IC"
+            w="I1"
+            e="127"
+        }else if (r=="선학"){
+            q="IC"
+            w="I1"
+            e="128"
+        }else if (r=="신연수"){
+            q="IC"
+            w="I1"
+            e="129"
+        }else if (r=="원인재"){
+            q="IC"
+            w="I1"
+            e="130"
+        }else if (r=="동춘"){
+            q="IC"
+            w="I1"
+            e="131"
+        }else if (r=="동막"){
+            q="IC"
+            w="I1"
+            e="132"
+        }else if (r=="캠퍼스타운"){
+            q="IC"
+            w="I1"
+            e="133"
+        }else if (r=="테크노파크"){
+            q="IC"
+            w="I1"
+            e="134"
+        }else if (r=="지식정보단지"){
+            q="IC"
+            w="I1"
+            e="135"
+        }else if (r=="인천대입구"){
+            q="IC"
+            w="I1"
+            e="136"
+        }else if (r=="샌트럴파크"){
+            q="IC"
+            w="I1"
+            e="137"
+        }else if (r=="국제업무지구"){
+            q="IC"
+            w="I1"
+            e="138"
+        }else if (r=="송도달빛축제공원"){
+            q="IC"
+            w="I1"
+            e="139"
+        }else if (r=="검단오류"){
+            q="IC"
+            w="I2"
+            e="201"
+        }else if (r=="왕길"){
+            q="IC"
+            w="I2"
+            e="202"
+        }else if (r=="검단사거리"){
+            q="IC"
+            w="I2"
+            e="203"
+        }else if (r=="마전"){
+            q="IC"
+            w="I2"
+            e="204"
+        }else if (r=="완정"){
+            q="IC"
+            w="I2"
+            e="205"
+        }else if (r=="독정"){
+            q="IC"
+            w="I2"
+            e="206"
+        }else if (r=="검암"){
+            q="IC"
+            w="I2"
+            e="207"
+        }else if (r=="검바위"){
+            q="IC"
+            w="I2"
+            e="208"
+        }else if (r=="아시아드경기장"){
+            q="IC"
+            w="I2"
+            e="209"
+        }else if (r=="서구청"){
+            q="IC"
+            w="I2"
+            e="210"
+        }else if (r=="가정"){
+            q="IC"
+            w="I2"
+            e="211"
+        }else if (r=="가정중앙시장"){
+            q="IC"
+            w="I2"
+            e="212"
+        }else if (r=="인천석남"){
+            q="IC"
+            w="I2"
+            e="213"
+        }else if (r=="서부여성회관"){
+            q="IC"
+            w="I2"
+            e="214"
+        }else if (r=="인천가좌"){
+            q="IC"
+            w="I2"
+            e="215"
+        }else if (r=="가재울"){
+            q="IC"
+            w="I2"
+            e="216"
+        }else if (r=="주안국가산단"){
+            q="IC"
+            w="I2"
+            e="217"
+        }else if (r=="주안"){
+            q="IC"
+            w="I2"
+            e="218"
+        }else if (r=="시민공원"){
+            q="IC"
+            w="I2"
+            e="219"
+        }else if (r=="석바위시장"){
+            q="IC"
+            w="I2"
+            e="220"
+        }else if (r=="인천시청2"){
+            q="IC"
+            w="I2"
+            e="221"
+        }else if (r=="석천사거리"){
+            q="IC"
+            w="I2"
+            e="222"
+        }else if (r=="모래내시장"){
+            q="IC"
+            w="I2"
+            e="223"
+        }else if (r=="만수"){
+            q="IC"
+            w="I2"
+            e="224"
+        }else if (r=="남동구청"){
+            q="IC"
+            w="I2"
+            e="225"
+        }else if (r=="인천대공원"){
+            q="IC"
+            w="I2"
+            e="226"
+        }else if (r=="운연"){
+            q="IC"
+            w="I2"
+            e="227"
+        }else if (r=="지행"){
+            q="KR"
+            w="1"
+            e="0104"
+        }else if (r=="도봉"){
+            q="KR"
+            w="1"
+            e="0114"
+        }else if (r=="창동"){
+            q="KR"
+            w="1"
+            e="0116"
+        }else if (r=="월계"){
+            q="KR"
+            w="1"
+            e="0118"
+        }else if (r=="외대앞"){
+            q="KR"
+            w="1"
+            e="0122"
+        }else if (r=="대방"){
+            q="KR"
+            w="1"
+            e="0137"
+        }else if (r=="신길"){
+            q="KR"
+            w="1"
+            e="0138"
+        }else if (r=="덕정"){
+            q="KR"
+            w="1"
+            e="0141"
+        }else if (r=="구일"){
+            q="KR"
+            w="1"
+            e="0142"
+        }else if (r=="온수"){
+            q="KR"
+            w="1"
+            e="0145"
+        }else if (r=="역곡"){
+            q="KR"
+            w="1"
+            e="0146"
+        }else if (r=="송내"){
+            q="KR"
+            w="1"
+            e="0150"
+        }else if (r=="부평서울1호선"){
+            q="KR"
+            w="1"
+            e="0152"
+        }else if (r=="성균관대"){
+            q="KR"
+            w="1"
+            e="0153"
+        }else if (r=="연천"){
+            q="KR"
+            w="1"
+            e="100-3"
+        }else if (r=="전곡"){
+            q="KR"
+            w="1"
+            e="100-2"
+        }else if (r=="청산"){
+            q="KR"
+            w="1"
+            e="100-1"
+        }else if (r=="소요산"){
+            q="KR"
+            w="1"
+            e="100"
+        }else if (r=="동두천"){
+            q="KR"
+            w="1"
+            e="101"
+        }else if (r=="보산"){
+            q="KR"
+            w="1"
+            e="102"
+        }else if (r=="동두천중앙"){
+            q="KR"
+            w="1"
+            e="103"
+        }else if (r=="덕계"){
+            q="KR"
+            w="1"
+            e="106"
+        }else if (r=="녹양"){
+            q="KR"
+            w="1"
+            e="108"
+        }else if (r=="가능"){
+            q="KR"
+            w="1"
+            e="109"
+        }else if (r=="의정부"){
+            q="KR"
+            w="1"
+            e="110"
+        }else if (r=="회룡"){
+            q="KR"
+            w="1"
+            e="111"
+        }else if (r=="망월사"){
+            q="KR"
+            w="1"
+            e="112"
+        }else if (r=="도봉산"){
+            q="KR"
+            w="1"
+            e="113"
+        }else if (r=="방학"){
+            q="KR"
+            w="1"
+            e="115"
+        }else if (r=="녹천"){
+            q="KR"
+            w="1"
+            e="117"
+        }else if (r=="석계"){
+            q="KR"
+            w="1"
+            e="120"
+        }else if (r=="신이문"){
+            q="KR"
+            w="1"
+            e="121"
+        }else if (r=="회기"){
+            q="KR"
+            w="1"
+            e="123"
+        }else if (r=="남영"){
+            q="KR"
+            w="1"
+            e="134"
+        }else if (r=="용산"){
+            q="KR"
+            w="1"
+            e="135"
+        }else if (r=="노량진"){
+            q="KR"
+            w="1"
+            e="136"
+        }else if (r=="영등포"){
+            q="KR"
+            w="1"
+            e="139"
+        }else if (r=="신도림"){
+            q="KR"
+            w="1"
+            e="140"
+        }else if (r=="개봉"){
+            q="KR"
+            w="1"
+            e="143"
+        }else if (r=="오류동"){
+            q="KR"
+            w="1"
+            e="144"
+        }else if (r=="소사"){
+            q="KR"
+            w="1"
+            e="147"
+        }else if (r=="부천"){
+            q="KR"
+            w="1"
+            e="148"
+        }else if (r=="명학"){
+            q="KR"
+            w="1"
+            e="P148"
+        }else if (r=="부개"){
+            q="KR"
+            w="1"
+            e="151"
+        }else if (r=="백운"){
+            q="KR"
+            w="1"
+            e="153"
+        }else if (r=="동암"){
+            q="KR"
+            w="1"
+            e="154"
+        }else if (r=="주안서울1호선"){
+            q="KR"
+            w="1"
+            e="156"
+        }else if (r=="도화"){
+            q="KR"
+            w="1"
+            e="157"
+        }else if (r=="제물포"){
+            q="KR"
+            w="1"
+            e="158"
+        }else if (r=="도원"){
+            q="KR"
+            w="1"
+            e="159"
+        }else if (r=="동인천"){
+            q="KR"
+            w="1"
+            e="160"
+        }else if (r=="인천서울1호선"){
+            q="KR"
+            w="1"
+            e="161"
+        }else if (r=="세류"){
+            q="KR"
+            w="1"
+            e="1715"
+        }else if (r=="중동"){
+            q="KR"
+            w="1"
+            e="1822"
+        }else if (r=="광운대"){
+            q="KR"
+            w="1"
+            e="199"
+        }else if (r=="양주"){
+            q="KR"
+            w="1"
+            e="K107"
+        }else if (r=="광명"){
+            q="KR"
+            w="1"
+            e="K410"
+        }else if (r=="구로"){
+            q="KR"
+            w="1"
+            e="P141"
+        }else if (r=="가산디지털단지"){
+            q="KR"
+            w="1"
+            e="P142"
+        }else if (r=="독산"){
+            q="KR"
+            w="1"
+            e="P143"
+        }else if (r=="금천구청"){
+            q="KR"
+            w="1"
+            e="P144"
+        }else if (r=="석수"){
+            q="KR"
+            w="1"
+            e="P145"
+        }else if (r=="관악"){
+            q="KR"
+            w="1"
+            e="P146"
+        }else if (r=="안양"){
+            q="KR"
+            w="1"
+            e="P147"
+        }else if (r=="금정"){
+            q="KR"
+            w="1"
+            e="P149"
+        }else if (r=="군포"){
+            q="KR"
+            w="1"
+            e="P150"
+        }else if (r=="당정"){
+            q="KR"
+            w="1"
+            e="P151"
+        }else if (r=="의왕"){
+            q="KR"
+            w="1"
+            e="P152"
+        }else if (r=="화서"){
+            q="KR"
+            w="1"
+            e="P154"
+        }else if (r=="수원"){
+            q="KR"
+            w="1"
+            e="P155"
+        }else if (r=="병점"){
+            q="KR"
+            w="1"
+            e="P157"
+        }else if (r=="서동탄"){
+            q="KR"
+            w="1"
+            e="P157-2"
+        }else if (r=="세마"){
+            q="KR"
+            w="1"
+            e="P158"
+        }else if (r=="오산대"){
+            q="KR"
+            w="1"
+            e="P159"
+        }else if (r=="오산"){
+            q="KR"
+            w="1"
+            e="P160"
+        }else if (r=="진위"){
+            q="KR"
+            w="1"
+            e="P161"
+        }else if (r=="송탄"){
+            q="KR"
+            w="1"
+            e="P162"
+        }else if (r=="서정리"){
+            q="KR"
+            w="1"
+            e="P163"
+        }else if (r=="평택지제"){
+            q="KR"
+            w="1"
+            e="P164"
+        }else if (r=="평택"){
+            q="KR"
+            w="1"
+            e="P165"
+        }else if (r=="성환"){
+            q="KR"
+            w="1"
+            e="P166"
+        }else if (r=="직산"){
+            q="KR"
+            w="1"
+            e="P167"
+        }else if (r=="두정"){
+            q="KR"
+            w="1"
+            e="P168"
+        }else if (r=="천안서울1호선"){
+            q="KR"
+            w="1"
+            e="P169"
+        }else if (r=="봉명"){
+            q="KR"
+            w="1"
+            e="P170"
+        }else if (r=="쌍용"){
+            q="KR"
+            w="1"
+            e="P171"
+        }else if (r=="아산"){
+            q="KR"
+            w="1"
+            e="P172"
+        }else if (r=="배방"){
+            q="KR"
+            w="1"
+            e="P174"
+        }else if (r=="온양온천"){
+            q="KR"
+            w="1"
+            e="P176"
+        }else if (r=="신창"){
+            q="KR"
+            w="1"
+            e="P177"
+        }else if (r=="탕정"){
+            q="KR"
+            w="1"
+            e="P173"
+        }else if (r==""){
+            q="KR"
+            w="1"
+            e="0104"
+        }else if (r==""){
+            q="KR"
+            w="1"
+            e="0104"
         }
-        r=null
+
+
+
         startLast()
     }
 }
