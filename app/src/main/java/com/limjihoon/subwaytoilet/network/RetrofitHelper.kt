@@ -16,7 +16,7 @@ class RetrofitHelper {
 
         fun getRetrofitAll(baseYrl:String):Retrofit{
             val retrofit =Retrofit.Builder()
-                .baseUrl(baseYrl)
+                .baseUrl("$baseYrl")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()

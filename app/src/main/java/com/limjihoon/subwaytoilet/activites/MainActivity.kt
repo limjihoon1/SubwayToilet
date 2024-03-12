@@ -21,7 +21,8 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 
 import com.limjihoon.subwaytoilet.R
-import com.limjihoon.subwaytoilet.data.alldatapl
+import com.limjihoon.subwaytoilet.data.Alldatapl
+
 import com.limjihoon.subwaytoilet.databinding.ActivityMainBinding
 import com.limjihoon.subwaytoilet.fragment.LastFragment
 import com.limjihoon.subwaytoilet.fragment.MyMapFragment
@@ -32,6 +33,12 @@ import com.limjihoon.subwaytoilet.network.RetrofitService
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Query
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.net.URL
+import javax.net.ssl.HttpsURLConnection
+import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -100,41 +107,43 @@ class MainActivity : AppCompatActivity() {
     }
     private fun Serch(){
 
-        val retrofit=RetrofitHelper.getRetrofitAll("https://openapi.kric.go.kr")
-        val retrofitService =retrofit.create(RetrofitService::class.java)
-        val call = retrofitService.dataget("json","S1","3","322")
-        call.enqueue(object :retrofit2.Callback<alldatapl>{
-            override fun onResponse(call: Call<alldatapl>, response: Response<alldatapl>) {
-                val s=response.body()
-                AlertDialog.Builder(this@MainActivity).setMessage("$s").create().show()
+        thread {
+            val sival ="DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=S1&lnCd=3&stinCd=322"
+            val searchUrl= "https://openapi.kric.go.kr/openapi/convenientInfo/stationToilet?serviceKey=$2a$10$"+sival
+            val url=URL(searchUrl)
+            val conneckt=url.openConnection() as HttpsURLConnection
+            conneckt.requestMethod = "GET"
+            conneckt.doInput = true
+            conneckt.useCaches = false
+
+            val inputStream = conneckt.inputStream
+            val inputStreamReader = InputStreamReader(inputStream)
+            val bufferedReader =BufferedReader(inputStreamReader)
+            val builder =StringBuilder()
+            while (true){
+
+                val line =bufferedReader.readLine() ?:break
+                builder.append(line+"\n")
             }
+            runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show() }
 
-            override fun onFailure(call: Call<alldatapl>, t: Throwable) {
-                Toast.makeText(this@MainActivity, "실패~!~", Toast.LENGTH_SHORT).show()
-                Log.d("aaa",t.message.toString())
-            }
+        }
 
-        })
-//        Toast.makeText(this, "$dataall\n" +"${myLocation?.longitude} ,${myLocation?.latitude}", Toast.LENGTH_SHORT).show()
-//        val retrofit = RetrofitHelper.getRetrofitAll("oiletopenapi/convenientInfo/stationT?serviceKey=")
-//        val requestServices = retrofit.create(RetrofitService::class.java)
-//        val call =requestServices.dataget("A1","AR","A01")
-//        call.enqueue(object :retrofit2.Callback<alldatapl>{
-//            override fun onResponse(call: Call<alldatapl>, response: Response<alldatapl>) {
-//                val dd = response.body()
-//                AlertDialog.Builder(this@MainActivity).setMessage("$dd").create().show()
+//        val retrofit=RetrofitHelper.getRetrofitAll("https://openapi.kric.go.kr")
+//        val retrofitService =retrofit.create(RetrofitService::class.java)
+//        val call = retrofitService.datagetToString("json","S1","3","322")
+//       call.enqueue(object :retrofit2.Callback<String>{
+//           override fun onResponse(call: Call<String>, response: Response<String>) {
+//               val s:String? =response.body()?: return
+//               AlertDialog.Builder(this@MainActivity).setMessage("$s").create().show()
+//               Log.d("aaa","${s.toString()}")
+//           }
 //
-//            }
+//           override fun onFailure(call: Call<String>, t: Throwable) {
+//               AlertDialog.Builder(this@MainActivity).setMessage("${t.message}").create().show()
 //
-//            override fun onFailure(call: Call<alldatapl>, t: Throwable) {
-//                AlertDialog.Builder(this@MainActivity).setMessage("실패~").create().show()
-//            }
+//           }
 //
-//        })
-
+//       } )
     }
-    var dataall =""
-
-
-
 }
