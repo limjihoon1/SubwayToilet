@@ -1080,6 +1080,174 @@ class MainActivity : AppCompatActivity() {
             q="KR"
             w="1"
             e="P173"
+        }else if (r=="대화"){
+            q="KR"
+            w="3"
+            e="0309"
+        }else if (r=="대곡"){
+            q="KR"
+            w="3"
+            e="0314"
+        }else if (r=="화정"){
+            q="KR"
+            w="3"
+            e="0315"
+        }else if (r=="원흥"){
+            q="KR"
+            w="3"
+            e="1948"
+        }else if (r=="주엽"){
+            q="KR"
+            w="3"
+            e="310"
+        }else if (r=="정발산"){
+            q="KR"
+            w="3"
+            e="311"
+        }else if (r=="마두"){
+            q="KR"
+            w="3"
+            e="312"
+        }else if (r=="백석"){
+            q="KR"
+            w="3"
+            e="313"
+        }else if (r=="원당"){
+            q="KR"
+            w="3"
+            e="316"
+        }else if (r=="삼송"){
+            q="KR"
+            w="3"
+            e="318"
+        }else if (r=="대공원"){
+            q="KR"
+            w="4"
+            e="0437"
+        }else if (r=="과천"){
+            q="KR"
+            w="4"
+            e="0438"
+        }else if (r=="인덕원"){
+            q="KR"
+            w="4"
+            e="0440"
+        }else if (r=="범계"){
+            q="KR"
+            w="4"
+            e="0442"
+        }else if (r=="대야미"){
+            q="KR"
+            w="4"
+            e="0446"
+        }else if (r=="반월"){
+            q="KR"
+            w="4"
+            e="0447"
+        }else if (r=="정부과천청사"){
+            q="KR"
+            w="4"
+            e="0509"
+        }else if (r=="한대앞"){
+            q="KR"
+            w="4"
+            e="1755"
+        }else if (r=="선바위"){
+            q="KR"
+            w="4"
+            e="435"
+        }else if (r=="경마공원"){
+            q="KR"
+            w="4"
+            e="436"
+        }else if (r=="평촌"){
+            q="KR"
+            w="4"
+            e="441"
+        }else if (r=="산본"){
+            q="KR"
+            w="4"
+            e="444"
+        }else if (r=="수리산"){
+            q="KR"
+            w="4"
+            e="445"
+        }else if (r=="상록수"){
+            q="KR"
+            w="4"
+            e="448"
+        }else if (r=="중앙"){
+            q="KR"
+            w="4"
+            e="K252"
+        }else if (r=="초지"){
+            q="KR"
+            w="4"
+            e="K254"
+        }else if (r=="안산"){
+            q="KR"
+            w="4"
+            e="K255"
+        }else if (r=="신길온천"){
+            q="KR"
+            w="4"
+            e="K256"
+        }else if (r=="정왕"){
+            q="KR"
+            w="4"
+            e="K257"
+        }else if (r=="오이도"){
+            q="KR"
+            w="4"
+            e="K258"
+        }else if (r=="금정"){
+            q="KR"
+            w="4"
+            e="P149"
+        }else if (r=="고잔"){
+            q="KR"
+            w="4"
+            e="K253"
+        }else if (r=="수내"){
+            q="KR"
+            w="K1"
+            e="1856"
+        }else if (r=="오목천"){
+            q="KR"
+            w="K1"
+            e="1874"
+        }else if (r=="송도"){
+            q="KR"
+            w="K1"
+            e="1886"
+        }else if (r=="인천수인분당선"){
+            q="KR"
+            w="K1"
+            e="K0272"
+        }else if (r=="청량리"){
+            q="KR"
+            w="K1"
+            e="K209"
+//        }else if (r=="압구로데오"){
+//            q="KR"
+//            w="K1"
+//            e="K212"
+//        }else if (r=="선정"){
+//            q="KR"
+//            w="K1"
+//            e="K214"
+//        }else if (r=="선릉"){
+//            q="KR"
+//            w="K1"
+//            e="K215"
+//        }else if (r=="개포동"){
+//            q="KR"
+//            w="K1"
+//            e="K219"
+//        }else if (r=="복정"){
+//            q="KR"
+//            w="K1"
+//            e="K222"
         }
 
 
@@ -1087,3 +1255,4 @@ class MainActivity : AppCompatActivity() {
         startLast()
     }
 }
+
