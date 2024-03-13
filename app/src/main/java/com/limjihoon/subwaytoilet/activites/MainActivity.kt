@@ -141,40 +141,49 @@ class MainActivity : AppCompatActivity() {
             var ee=jo.getString("STIN_CD")
             var name=jo.getString("STIN_NM")
 
-            val show =StationDataSearch(qq,ww,ee)
+            val show =StationDataSearch(qq,ww,ee,name)
             quit.add(show)
 
         }
 
-        quit.forEach{
 
-            binding.tttv.append("${it.RAIL_OPR_ISTT_CD}qq  ${it.LN_CD}ww  ${it.STIN_CD}ee")
-//            AlertDialog.Builder(this).setMessage("${it.RAIL_OPR_ISTT_CD}qq  ${it.LN_CD}ww  ${it.STIN_CD}ee").create().show()
+        quit.forEach{
+            if (it.STIN_NM == binding.et.text.toString()){
+
+//                binding.tttv.append("${it.RAIL_OPR_ISTT_CD}qq  ${it.LN_CD}ww  ${it.STIN_CD}ee")
+                AlertDialog.Builder(this).setMessage("${it.RAIL_OPR_ISTT_CD}   ${it.LN_CD}   ${it.STIN_CD}   ${it.STIN_NM}").create().show()
+                //                thread {
+////                    val sival ="DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=${it.RAIL_OPR_ISTT_CD}&lnCd=${it.LN_CD}&stinCd=${it.STIN_CD}"
+//                    val sival ="DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=KR&lnCd=K1&stinCd=K234"
+//                    val searchUrl= "https://openapi.kric.go.kr/openapi/convenientInfo/stationToilet?serviceKey=$2a$10$"+sival
+//                    val url=URL(searchUrl)
+//                    val conneckt=url.openConnection() as HttpsURLConnection
+//                    conneckt.requestMethod = "GET"
+//                    conneckt.doInput = true
+//                    conneckt.useCaches = false
+//
+//                    val inputStream = conneckt.inputStream
+//                    val inputStreamReader = InputStreamReader(inputStream)
+//                    val bufferedReader =BufferedReader(inputStreamReader)
+//                    val builder =StringBuilder()
+//                    while (true){
+//
+//                        val line =bufferedReader.readLine() ?:break
+//                        builder.append(line+"\n")
+//                    }
+//                    runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show() }
+//
+//                }
+                return
+            }else{
+                AlertDialog.Builder(this).setMessage("다시입력").create().show()
+                return
+            }
         }
 
 
 
-//        thread {
-//            val sival ="DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=$q&lnCd=$w&stinCd=$e"
-//            val searchUrl= "https://openapi.kric.go.kr/openapi/convenientInfo/stationToilet?serviceKey=$2a$10$"+sival
-//            val url=URL(searchUrl)
-//            val conneckt=url.openConnection() as HttpsURLConnection
-//            conneckt.requestMethod = "GET"
-//            conneckt.doInput = true
-//            conneckt.useCaches = false
-//
-//            val inputStream = conneckt.inputStream
-//            val inputStreamReader = InputStreamReader(inputStream)
-//            val bufferedReader =BufferedReader(inputStreamReader)
-//            val builder =StringBuilder()
-//            while (true){
-//
-//                val line =bufferedReader.readLine() ?:break
-//                builder.append(line+"\n")
-//            }
-//            runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show() }
 
-//        }
 
 
 
