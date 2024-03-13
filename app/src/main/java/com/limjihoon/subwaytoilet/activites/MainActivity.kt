@@ -19,9 +19,11 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
+import com.google.gson.JsonArray
 
 import com.limjihoon.subwaytoilet.R
 import com.limjihoon.subwaytoilet.data.Alldatapl
+import com.limjihoon.subwaytoilet.data.StationDataSearch
 
 import com.limjihoon.subwaytoilet.databinding.ActivityMainBinding
 import com.limjihoon.subwaytoilet.fragment.LastFragment
@@ -30,8 +32,11 @@ import com.limjihoon.subwaytoilet.fragment.ReviewFragment
 import com.limjihoon.subwaytoilet.fragment.ReviewSearchFragment
 import com.limjihoon.subwaytoilet.network.RetrofitHelper
 import com.limjihoon.subwaytoilet.network.RetrofitService
+import org.json.JSONArray
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
+import retrofit2.create
 import retrofit2.http.Query
 import java.io.BufferedReader
 import java.io.InputStream
@@ -115,34 +120,66 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    var quit:MutableList<StationDataSearch> = mutableListOf()
     private fun Serch(){
 
 
-        thread {
-            val sival ="DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=$q&lnCd=$w&stinCd=$e"
-            val searchUrl= "https://openapi.kric.go.kr/openapi/convenientInfo/stationToilet?serviceKey=$2a$10$"+sival
-            val url=URL(searchUrl)
-            val conneckt=url.openConnection() as HttpsURLConnection
-            conneckt.requestMethod = "GET"
-            conneckt.doInput = true
-            conneckt.useCaches = false
+        val inputStream = assets.open("station.json")
+        val inputStreamReader=InputStreamReader(inputStream)
+        val bufferedReader=BufferedReader(inputStreamReader)
+        val builder =StringBuilder()
+        while (true){
+            var line =bufferedReader.readLine()?:break
+            builder.append(line)
+        }
+        val jsonArray:JSONArray= JSONArray(builder.toString())
+        for (i in 0 until jsonArray.length()){
+            val jo =jsonArray.getJSONObject(i)
 
-            val inputStream = conneckt.inputStream
-            val inputStreamReader = InputStreamReader(inputStream)
-            val bufferedReader =BufferedReader(inputStreamReader)
-            val builder =StringBuilder()
-            while (true){
+            var qq=jo.getString("RAIL_OPR_ISTT_CD")
+            var ww=jo.getString("LN_CD")
+            var ee=jo.getString("STIN_CD")
+            var name=jo.getString("STIN_NM")
 
-                val line =bufferedReader.readLine() ?:break
-                builder.append(line+"\n")
-            }
-            runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show() }
+            val show =StationDataSearch(qq,ww,ee)
+            quit.add(show)
 
         }
 
-//        val retrofit=RetrofitHelper.getRetrofitAll("https://openapi.kric.go.kr")
+        quit.forEach{
+
+            binding.tttv.append("${it.RAIL_OPR_ISTT_CD}qq  ${it.LN_CD}ww  ${it.STIN_CD}ee")
+//            AlertDialog.Builder(this).setMessage("${it.RAIL_OPR_ISTT_CD}qq  ${it.LN_CD}ww  ${it.STIN_CD}ee").create().show()
+        }
+
+
+
+//        thread {
+//            val sival ="DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=$q&lnCd=$w&stinCd=$e"
+//            val searchUrl= "https://openapi.kric.go.kr/openapi/convenientInfo/stationToilet?serviceKey=$2a$10$"+sival
+//            val url=URL(searchUrl)
+//            val conneckt=url.openConnection() as HttpsURLConnection
+//            conneckt.requestMethod = "GET"
+//            conneckt.doInput = true
+//            conneckt.useCaches = false
+//
+//            val inputStream = conneckt.inputStream
+//            val inputStreamReader = InputStreamReader(inputStream)
+//            val bufferedReader =BufferedReader(inputStreamReader)
+//            val builder =StringBuilder()
+//            while (true){
+//
+//                val line =bufferedReader.readLine() ?:break
+//                builder.append(line+"\n")
+//            }
+//            runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show() }
+
+//        }
+
+
+
 //        val retrofitService =retrofit.create(RetrofitService::class.java)
-//        val call = retrofitService.datagetToString("json","S1","3","322")
+//        val call = retrofitService.datagetToString("json","S1","3","322",)
 //       call.enqueue(object :retrofit2.Callback<String>{
 //           override fun onResponse(call: Call<String>, response: Response<String>) {
 //               val s:String? =response.body()?: return
@@ -159,6 +196,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun placeSearch(){
+
 
 
         startLast()
