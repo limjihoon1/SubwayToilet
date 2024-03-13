@@ -2,12 +2,10 @@ package com.limjihoon.subwaytoilet.activites
 
 import android.content.pm.PackageManager
 import android.location.Location
-import android.net.DnsResolver.Callback
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -19,10 +17,8 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
-import com.google.gson.JsonArray
 
 import com.limjihoon.subwaytoilet.R
-import com.limjihoon.subwaytoilet.data.Alldatapl
 import com.limjihoon.subwaytoilet.data.StationDataSearch
 
 import com.limjihoon.subwaytoilet.databinding.ActivityMainBinding
@@ -30,16 +26,8 @@ import com.limjihoon.subwaytoilet.fragment.LastFragment
 import com.limjihoon.subwaytoilet.fragment.MyMapFragment
 import com.limjihoon.subwaytoilet.fragment.ReviewFragment
 import com.limjihoon.subwaytoilet.fragment.ReviewSearchFragment
-import com.limjihoon.subwaytoilet.network.RetrofitHelper
-import com.limjihoon.subwaytoilet.network.RetrofitService
 import org.json.JSONArray
-import org.json.JSONObject
-import retrofit2.Call
-import retrofit2.Response
-import retrofit2.create
-import retrofit2.http.Query
 import java.io.BufferedReader
-import java.io.InputStream
 import java.io.InputStreamReader
 import java.net.URL
 import javax.net.ssl.HttpsURLConnection
@@ -165,8 +153,8 @@ class MainActivity : AppCompatActivity() {
                         val line =bufferedReader.readLine() ?:break
                         builder.append(line +"\n")
                     }
-                    Log.d("asd",builder.toString())
-                    runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show()}
+//                    runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show()}
+                    supportFragmentManager.beginTransaction().replace(R.id.frame_layout,LastFragment()).commit()
                 }
                 return
             }else{
