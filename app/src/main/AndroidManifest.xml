@@ -38,6 +38,10 @@
         <activity
             android:name=".activites.MainActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.kakao.vectormap.APP_KEY"
+            android:value="dd61ec33e5b89e5120492c04a3929da9"/>
     </application>
 
 </manifest>
