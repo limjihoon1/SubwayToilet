@@ -40,11 +40,7 @@
             />
 
     </androidx.appcompat.widget.Toolbar>
-    <TextView
-        android:id="@+id/tttv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="asd"/>
+
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"

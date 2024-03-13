@@ -149,65 +149,33 @@ class MainActivity : AppCompatActivity() {
 
         quit.forEach{
             if (it.STIN_NM == binding.et.text.toString()){
-
-//                binding.tttv.append("${it.RAIL_OPR_ISTT_CD}qq  ${it.LN_CD}ww  ${it.STIN_CD}ee")
-                AlertDialog.Builder(this).setMessage("${it.RAIL_OPR_ISTT_CD}   ${it.LN_CD}   ${it.STIN_CD}   ${it.STIN_NM}").create().show()
-                //                thread {
-////                    val sival ="DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=${it.RAIL_OPR_ISTT_CD}&lnCd=${it.LN_CD}&stinCd=${it.STIN_CD}"
-//                    val sival ="DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=KR&lnCd=K1&stinCd=K234"
-//                    val searchUrl= "https://openapi.kric.go.kr/openapi/convenientInfo/stationToilet?serviceKey=$2a$10$"+sival
-//                    val url=URL(searchUrl)
-//                    val conneckt=url.openConnection() as HttpsURLConnection
-//                    conneckt.requestMethod = "GET"
-//                    conneckt.doInput = true
-//                    conneckt.useCaches = false
-//
-//                    val inputStream = conneckt.inputStream
-//                    val inputStreamReader = InputStreamReader(inputStream)
-//                    val bufferedReader =BufferedReader(inputStreamReader)
-//                    val builder =StringBuilder()
-//                    while (true){
-//
-//                        val line =bufferedReader.readLine() ?:break
-//                        builder.append(line+"\n")
-//                    }
-//                    runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show() }
-//
-//                }
+                thread {
+                    val addUrl = "DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=${it.RAIL_OPR_ISTT_CD}&lnCd=${it.LN_CD}&stinCd=${it.STIN_CD}"
+                    val searchUrl = "https://openapi.kric.go.kr/openapi/convenientInfo/stationToilet?serviceKey=$2a$10$"+addUrl
+                    val url =URL(searchUrl)
+                    val connect = url.openConnection() as HttpsURLConnection
+                    connect.requestMethod = "GET"
+                    connect.doInput = true
+                    connect.useCaches = false
+                    val inputStream2 = connect.inputStream
+                    val inputStreamReader2 = InputStreamReader(inputStream2)
+                    val bufferedReader =BufferedReader(inputStreamReader2)
+                    val builder = StringBuilder()
+                    while (true){
+                        val line =bufferedReader.readLine() ?:break
+                        builder.append(line +"\n")
+                    }
+                    Log.d("asd",builder.toString())
+                    runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show()}
+                }
                 return
             }else{
                 AlertDialog.Builder(this).setMessage("다시입력").create().show()
                 return
             }
         }
-
-
-
-
-
-
-
-//        val retrofitService =retrofit.create(RetrofitService::class.java)
-//        val call = retrofitService.datagetToString("json","S1","3","322",)
-//       call.enqueue(object :retrofit2.Callback<String>{
-//           override fun onResponse(call: Call<String>, response: Response<String>) {
-//               val s:String? =response.body()?: return
-//               AlertDialog.Builder(this@MainActivity).setMessage("$s").create().show()
-//               Log.d("aaa","${s.toString()}")
-//           }
-//
-//           override fun onFailure(call: Call<String>, t: Throwable) {
-//               AlertDialog.Builder(this@MainActivity).setMessage("${t.message}").create().show()
-//
-//           }
-//
-//       } )
-
     }
     private fun placeSearch(){
-
-
-
         startLast()
     }
 }
