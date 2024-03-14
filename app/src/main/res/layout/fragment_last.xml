@@ -4,16 +4,10 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.card.MaterialCardView
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/re"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="16dp"
-        android:elevation="4dp"
-
-        >
-
-
-    </com.google.android.material.card.MaterialCardView>
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

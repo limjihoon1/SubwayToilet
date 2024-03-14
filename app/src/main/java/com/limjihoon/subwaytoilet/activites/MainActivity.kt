@@ -19,6 +19,8 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
 
 import com.limjihoon.subwaytoilet.R
+import com.limjihoon.subwaytoilet.data.Accc
+import com.limjihoon.subwaytoilet.data.AdapterData
 import com.limjihoon.subwaytoilet.data.StationDataSearch
 
 import com.limjihoon.subwaytoilet.databinding.ActivityMainBinding
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     var q = "S1"
     var w = "3"
     var e = "322"
-
+    var lastData:Accc? =null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -109,60 +111,61 @@ class MainActivity : AppCompatActivity() {
 
 
     var quit:MutableList<StationDataSearch> = mutableListOf()
-    private fun Serch(){
+    private fun Serch() {
 
 
         val inputStream = assets.open("station.json")
-        val inputStreamReader=InputStreamReader(inputStream)
-        val bufferedReader=BufferedReader(inputStreamReader)
-        val builder =StringBuilder()
-        while (true){
-            var line =bufferedReader.readLine()?:break
+        val inputStreamReader = InputStreamReader(inputStream)
+        val bufferedReader = BufferedReader(inputStreamReader)
+        val builder = StringBuilder()
+        while (true) {
+            var line = bufferedReader.readLine() ?: break
             builder.append(line)
         }
-        val jsonArray:JSONArray= JSONArray(builder.toString())
-        for (i in 0 until jsonArray.length()){
-            val jo =jsonArray.getJSONObject(i)
+        val jsonArray: JSONArray = JSONArray(builder.toString())
+        for (i in 0 until jsonArray.length()) {
+            val jo = jsonArray.getJSONObject(i)
 
-            var qq=jo.getString("RAIL_OPR_ISTT_CD")
-            var ww=jo.getString("LN_CD")
-            var ee=jo.getString("STIN_CD")
-            var name=jo.getString("STIN_NM")
+            var qq = jo.getString("RAIL_OPR_ISTT_CD")
+            var ww = jo.getString("LN_CD")
+            var ee = jo.getString("STIN_CD")
+            var name = jo.getString("STIN_NM")
 
-            val show =StationDataSearch(qq,ww,ee,name)
+            val show = StationDataSearch(qq, ww, ee, name)
             quit.add(show)
 
         }
+        loop@ for (i in 0 until quit.size) {
+            if (quit.get(i).STIN_NM == binding.et.text.toString()) {
 
-
-        quit.forEach{
-            if (it.STIN_NM == binding.et.text.toString()){
-                thread {
-                    val addUrl = "DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=${it.RAIL_OPR_ISTT_CD}&lnCd=${it.LN_CD}&stinCd=${it.STIN_CD}"
-                    val searchUrl = "https://openapi.kric.go.kr/openapi/convenientInfo/stationToilet?serviceKey=$2a$10$"+addUrl
-                    val url =URL(searchUrl)
-                    val connect = url.openConnection() as HttpsURLConnection
-                    connect.requestMethod = "GET"
-                    connect.doInput = true
-                    connect.useCaches = false
-                    val inputStream2 = connect.inputStream
-                    val inputStreamReader2 = InputStreamReader(inputStream2)
-                    val bufferedReader =BufferedReader(inputStreamReader2)
-                    val builder = StringBuilder()
-                    while (true){
-                        val line =bufferedReader.readLine() ?:break
-                        builder.append(line +"\n")
-                    }
-//                    runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show()}
-                    supportFragmentManager.beginTransaction().replace(R.id.frame_layout,LastFragment()).commit()
-                }
-                return
-            }else{
-                AlertDialog.Builder(this).setMessage("다시입력").create().show()
-                return
+            } else {
+                continue@loop
             }
+            thread {
+                val addUrl = "DajG.Y9Y3HD8diIuof5uUuDnkZLrm7zRE/U4jq/xlPX9d9yCi8D8O&format=json&railOprIsttCd=${quit.get(i).RAIL_OPR_ISTT_CD}&lnCd=${quit.get(i).LN_CD}&stinCd=${quit.get(i).STIN_CD}"
+                val searchUrl = "https://openapi.kric.go.kr/openapi/convenientInfo/stationToilet?serviceKey=$2a$10$"+addUrl
+                val url =URL(searchUrl)
+                val connect = url.openConnection() as HttpsURLConnection
+                connect.requestMethod = "GET"
+                connect.doInput = true
+                connect.useCaches = false
+                val inputStream2 = connect.inputStream
+                val inputStreamReader2 = InputStreamReader(inputStream2)
+                val bufferedReader =BufferedReader(inputStreamReader2)
+                val builder = StringBuilder()
+                while (true){
+                    val line =bufferedReader.readLine() ?:break
+                    builder.append(line +"\n")
+                }
+                runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show()}
+                supportFragmentManager.beginTransaction().replace(R.id.frame_layout,LastFragment()).commit()
+
+            }
+
         }
+
     }
+
     private fun placeSearch(){
         startLast()
     }

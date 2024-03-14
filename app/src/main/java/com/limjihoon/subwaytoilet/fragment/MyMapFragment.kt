@@ -31,13 +31,6 @@ public class MyMapFragment :Fragment(){
         super.onViewCreated(view, savedInstanceState)
         Toast.makeText(context, "asd", Toast.LENGTH_SHORT).show()
 
-//        binding.btn.setOnClickListener { clickBtnSave() }
-//        binding.btn2.setOnClickListener { clickBtnLoad() }
-
-    }
-    private fun clickBtnLoad(){
-
-
 
     }
 

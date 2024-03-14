@@ -4,9 +4,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
+    <com.kakao.vectormap.MapView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/samplemap"/>
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
