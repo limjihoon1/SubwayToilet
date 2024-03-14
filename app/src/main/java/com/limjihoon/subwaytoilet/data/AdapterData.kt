@@ -10,7 +10,8 @@ data class AdapterData(
     var gateInotDvNm:String,
     var exitNo:String,
     var dtlLoc:String,
-    var mlFmlDvNm:String,
-    var toltNum:Int,
+    var mlFmlDvNm: String,
+    var toltNum: Int,
     var diapExchNum:String
+
 )

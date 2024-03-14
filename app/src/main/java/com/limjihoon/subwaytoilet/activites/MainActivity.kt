@@ -6,6 +6,7 @@ import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -111,6 +112,7 @@ class MainActivity : AppCompatActivity() {
 
 
     var quit:MutableList<StationDataSearch> = mutableListOf()
+    var sivar :MutableList<AdapterData> = mutableListOf()
     private fun Serch() {
 
 
@@ -135,9 +137,20 @@ class MainActivity : AppCompatActivity() {
             quit.add(show)
 
         }
+
+
+
         loop@ for (i in 0 until quit.size) {
             if (quit.get(i).STIN_NM == binding.et.text.toString()) {
-
+                AlertDialog.Builder(this)
+                    .setMessage(
+                        "${quit.get(i).RAIL_OPR_ISTT_CD}    ${quit.get(i).LN_CD}    ${
+                            quit.get(
+                                i
+                            ).STIN_CD
+                        }    ${quit.get(i).STIN_NM}"
+                    )
+                    .create().show()
             } else {
                 continue@loop
             }
@@ -152,11 +165,35 @@ class MainActivity : AppCompatActivity() {
                 val inputStream2 = connect.inputStream
                 val inputStreamReader2 = InputStreamReader(inputStream2)
                 val bufferedReader =BufferedReader(inputStreamReader2)
+
                 val builder = StringBuilder()
                 while (true){
                     val line =bufferedReader.readLine() ?:break
                     builder.append(line +"\n")
                 }
+//                val jsonArray: JSONArray = JSONArray(builder.toString())
+//                for (i in 0 until jsonArray.length()) {
+//                    val jo = jsonArray.getJSONObject(i)
+//
+//                    var railOprIsttCd = jo.getString("railOprIsttCd")
+//                    var lnCd = jo.getString("lnCd")
+//                    var stinCd = jo.getString("stinCd")
+//                    var grndDvNm = jo.getString("grndDvNm")
+//                    var stinFlor = jo.getInt("stinFlor")
+//                    var gateInotDvNm = jo.getString("gateInotDvNm")
+//                    var exitNo = jo.getString("exitNo")
+//                    var dtlLoc = jo.getString("dtlLoc")
+//                    var mlFmlDvNm = jo.getString("mlFmlDvNm")
+//                    var toltNum = jo.getInt("toltNum")
+//                    var diapExchNum = jo.getString("diapExchNum")
+//
+//
+//                    val show = AdapterData(railOprIsttCd,lnCd,stinCd,grndDvNm,stinFlor,gateInotDvNm,exitNo,dtlLoc,mlFmlDvNm,toltNum,diapExchNum)
+//                    sivar.add(show)
+//
+//                }
+                Log.d("sivar",sivar.get(0).diapExchNum)
+
                 runOnUiThread { AlertDialog.Builder(this).setMessage("${builder.toString()}").create().show()}
                 supportFragmentManager.beginTransaction().replace(R.id.frame_layout,LastFragment()).commit()
 
@@ -165,6 +202,10 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
+
+
 
     private fun placeSearch(){
         startLast()

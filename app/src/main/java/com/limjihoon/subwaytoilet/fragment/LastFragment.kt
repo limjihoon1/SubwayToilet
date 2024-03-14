@@ -27,10 +27,9 @@ class LastFragment :Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val main :MainActivity = activity as MainActivity
-//        Log.d("qqq",main.lastData!!.toString()+"ass")
-//        main.lastData?: return
-//        binding.re.adapter =AdapterLast(requireContext(),main.lastData!!.adapterData)
+        val main :MainActivity = activity as MainActivity
+        main.lastData?: return
+        binding.re.adapter =AdapterLast(requireContext(),main.lastData!!.adapterData)
 
     }
 
