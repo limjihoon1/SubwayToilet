@@ -33,7 +33,7 @@ class AdapterLast(var context: Context, var body:List<Body>) : Adapter<AdapterLa
         holder.binding.tvMsg.text = last.dtlLoc
         holder.binding.tvName.text = last.mlFmlDvNm
         holder.binding.tvNumber.text = last.exitNo
-        Log.d("aqqq",last.diapExchNum+"asd")
+        Log.d("aqqq",last.exitNo+"asd")
 
 
     }

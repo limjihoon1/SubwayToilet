@@ -1,5 +1,6 @@
 package com.limjihoon.subwaytoilet.fragment
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.limjihoon.subwaytoilet.activites.MainActivity
 import com.limjihoon.subwaytoilet.adapter.AdapterLast
+import com.limjihoon.subwaytoilet.adapter.LastAdapterTwo
 import com.limjihoon.subwaytoilet.data.Accc
 import com.limjihoon.subwaytoilet.data.Body
 import com.limjihoon.subwaytoilet.databinding.ActivityMainBinding
@@ -30,9 +32,10 @@ class LastFragment :Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val main :MainActivity = activity as MainActivity
-        main.lastData?.let {
-            binding.re.adapter =AdapterLast(requireContext(), main.lastData!!.body)
-        }?: Log.d("asdasdasd","null")
+        main.lastData?: Log.d("qqww","${main.lastData}")
+//        AlertDialog.Builder(requireContext()).setMessage("${main.lastData}").create().show()
+        binding.re.adapter =LastAdapterTwo(requireContext(),main.lastData!!.body)
+
 
 
     }
