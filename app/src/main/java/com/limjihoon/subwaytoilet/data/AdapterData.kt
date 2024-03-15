@@ -1,7 +1,9 @@
 package com.limjihoon.subwaytoilet.data
 
-data class Accc(var adapterData:List<AdapterData>)
-data class AdapterData(
+data class Accc(var header:Header, var body:List<Body>)
+data class Header(var resultCnt:Int,var resultCode:String,var resultMsg:String)
+
+data class Body(
     var railOprIsttCd:String,
     var lnCd:String,
     var stinCd:String,

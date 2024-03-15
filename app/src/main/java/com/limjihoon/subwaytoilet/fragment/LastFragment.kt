@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.limjihoon.subwaytoilet.activites.MainActivity
 import com.limjihoon.subwaytoilet.adapter.AdapterLast
+import com.limjihoon.subwaytoilet.data.Accc
+import com.limjihoon.subwaytoilet.data.Body
 import com.limjihoon.subwaytoilet.databinding.ActivityMainBinding
 import com.limjihoon.subwaytoilet.databinding.FragmentLastBinding
 
@@ -20,7 +22,7 @@ class LastFragment :Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLastBinding.inflate(layoutInflater,container,false)
+        binding = FragmentLastBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -28,9 +30,12 @@ class LastFragment :Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val main :MainActivity = activity as MainActivity
-        main.lastData?: return
-        binding.re.adapter =AdapterLast(requireContext(),main.lastData!!.adapterData)
+        main.lastData?.let {
+            binding.re.adapter =AdapterLast(requireContext(), main.lastData!!.body)
+        }?: Log.d("asdasdasd","null")
+
 
     }
+
 
 }
