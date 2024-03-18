@@ -28,8 +28,6 @@ class LastFragment :Fragment() {
 
         val main :MainActivity = activity as MainActivity
         main.lastData?: return
-//        AlertDialog.Builder(requireContext()).setMessage("${main.lastData!!.body.get(0).exitNo}").create().show()
-
         binding.recyclerViewLast.adapter = LastAdapterTwo(requireContext(), main.lastData!!.body)
 
 

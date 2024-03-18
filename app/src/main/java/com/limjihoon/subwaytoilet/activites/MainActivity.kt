@@ -25,6 +25,7 @@ import com.limjihoon.subwaytoilet.R
 import com.limjihoon.subwaytoilet.data.Accc
 
 import com.limjihoon.subwaytoilet.data.Body
+import com.limjihoon.subwaytoilet.data.KakaoData
 import com.limjihoon.subwaytoilet.data.StationDataSearch
 
 import com.limjihoon.subwaytoilet.databinding.ActivityMainBinding
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity() {
     var w = "3"
     var e = "322"
     var lastData: Accc? = null
+    var kakaoData:KakaoData?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,7 +104,7 @@ class MainActivity : AppCompatActivity() {
             startLast()
         }
         binding.btn.setOnClickListener {
-            placeSearch()
+            Serch()
 
         }
     }
@@ -133,7 +135,7 @@ class MainActivity : AppCompatActivity() {
             super.onLocationResult(p0)
             myLocation = p0.lastLocation
             locationProviderClient.removeLocationUpdates(this)
-            Serch()
+            myStation()
         }
 
     }
@@ -193,6 +195,26 @@ class MainActivity : AppCompatActivity() {
 
     private fun placeSearch() {
         startLast()
+
+
+
+    }
+
+    private fun myStation(){
+        val retrofit =RtrofitHelper.getRetrofitInstance("https://dapi.kakao.com")
+        val retrofitService = retrofit.create(RetrofitService::class.java)
+        val call =retrofitService.kakoDataSearch("지하철역",myLocation!!.longitude.toString(),myLocation!!.latitude.toString())
+        call.enqueue(object :Callback<KakaoData>{
+            override fun onResponse(call: Call<KakaoData>, response: Response<KakaoData>) {
+                kakaoData=response.body()
+
+            }
+
+            override fun onFailure(call: Call<KakaoData>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 }
 
