@@ -13,7 +13,12 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.kakao.vectormap.KakaoMap
 import com.kakao.vectormap.KakaoMapReadyCallback
+import com.kakao.vectormap.LatLng
+import com.kakao.vectormap.camera.CameraUpdate
+import com.kakao.vectormap.camera.CameraUpdateFactory
+import com.kakao.vectormap.label.LabelOptions
 import com.limjihoon.subwaytoilet.R
+import com.limjihoon.subwaytoilet.activites.MainActivity
 import com.limjihoon.subwaytoilet.databinding.FragmentMyMapBinding
 
 public class MyMapFragment :Fragment(){
@@ -32,13 +37,25 @@ public class MyMapFragment :Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.map
+        binding.map.start(mapShow)
 
     }
     private val mapShow:KakaoMapReadyCallback = object :KakaoMapReadyCallback(){
         override fun onMapReady(kakaoMap: KakaoMap) {
-            TODO("Not yet implemented")
+            val latitude:Double = (activity as MainActivity).myLocation?.latitude?:37.555
+            val longitude:Double = (activity as MainActivity).myLocation?.longitude?:126.9746
+            val mypos:LatLng=LatLng.from(latitude,longitude)
+
+            val cameraUpdate =CameraUpdateFactory.newCenterPosition(mypos,16)
+            kakaoMap.moveCamera(cameraUpdate)
+
+            val labelOptions=LabelOptions.from(mypos).setStyles(R.drawable.profle)
+            val labelOptionsLayout =kakaoMap.labelManager!!.layer!!
+            labelOptionsLayout.addLabel(labelOptions)
+
+//            val placeLists:List<>
         }
+
 
     }
 
