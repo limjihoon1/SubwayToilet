@@ -22,7 +22,6 @@
             android:text="역이름 :"
             android:textStyle="bold"
             android:textColor="@color/black"
-
         />
         <TextView
             android:id="@+id/tv_msg"

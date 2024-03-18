@@ -11,6 +11,8 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.kakao.vectormap.KakaoMap
+import com.kakao.vectormap.KakaoMapReadyCallback
 import com.limjihoon.subwaytoilet.R
 import com.limjihoon.subwaytoilet.databinding.FragmentMyMapBinding
 
@@ -29,8 +31,14 @@ public class MyMapFragment :Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(context, "asd", Toast.LENGTH_SHORT).show()
 
+        binding.map
+
+    }
+    private val mapShow:KakaoMapReadyCallback = object :KakaoMapReadyCallback(){
+        override fun onMapReady(kakaoMap: KakaoMap) {
+            TODO("Not yet implemented")
+        }
 
     }
 

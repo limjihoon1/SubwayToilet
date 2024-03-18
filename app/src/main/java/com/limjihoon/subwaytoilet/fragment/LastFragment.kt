@@ -2,17 +2,12 @@ package com.limjihoon.subwaytoilet.fragment
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.limjihoon.subwaytoilet.activites.MainActivity
-import com.limjihoon.subwaytoilet.adapter.AdapterLast
 import com.limjihoon.subwaytoilet.adapter.LastAdapterTwo
-import com.limjihoon.subwaytoilet.data.Accc
-import com.limjihoon.subwaytoilet.data.Body
-import com.limjihoon.subwaytoilet.databinding.ActivityMainBinding
 import com.limjihoon.subwaytoilet.databinding.FragmentLastBinding
 
 class LastFragment :Fragment() {
@@ -32,9 +27,10 @@ class LastFragment :Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val main :MainActivity = activity as MainActivity
-        main.lastData?: Log.d("qqww","${main.lastData}")
-//        AlertDialog.Builder(requireContext()).setMessage("${main.lastData}").create().show()
-        binding.re.adapter =LastAdapterTwo(requireContext(),main.lastData!!.body)
+        main.lastData?: return
+//        AlertDialog.Builder(requireContext()).setMessage("${main.lastData!!.body.get(0).exitNo}").create().show()
+
+        binding.recyclerViewLast.adapter = LastAdapterTwo(requireContext(), main.lastData!!.body)
 
 
 

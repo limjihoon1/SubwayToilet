@@ -175,6 +175,7 @@ class MainActivity : AppCompatActivity() {
                 call.enqueue(object : Callback<Accc> {
                     override fun onResponse(call: Call<Accc>, response: Response<Accc>) {
                         lastData = response.body()
+
                         binding.bnv.selectedItemId = R.id.menu_forth
                     }
 

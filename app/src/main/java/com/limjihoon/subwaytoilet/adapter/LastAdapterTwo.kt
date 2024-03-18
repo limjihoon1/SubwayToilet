@@ -5,12 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.limjihoon.subwaytoilet.data.Accc
 import com.limjihoon.subwaytoilet.data.Body
 import com.limjihoon.subwaytoilet.databinding.RecyclerViewLastBinding
 
-class LastAdapterTwo(var context: Context,var body:List<Body>) : Adapter<LastAdapterTwo.VH>() {
+class LastAdapterTwo(var context: Context, var bodyList: List<Body>) : Adapter<LastAdapterTwo.VH>() {
 
-    inner class VH(var binding: RecyclerViewLastBinding):ViewHolder(binding.root)
+    inner class VH(val binding: RecyclerViewLastBinding):ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         val layoutInflater = LayoutInflater.from(context)
@@ -19,15 +20,17 @@ class LastAdapterTwo(var context: Context,var body:List<Body>) : Adapter<LastAda
     }
 
     override fun getItemCount(): Int {
-        return body.size
+        return bodyList.size
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-        val last = body[position]
-        holder.binding.tvName.text=last.dtlLoc
-        holder.binding.tvInout.text=last.diapExchNum
-        holder.binding.tvMsg.text=last.gateInotDvNm
+        val last = bodyList[position]
+        holder.binding.tvName.text=last.exitNo
+        holder.binding.tvInout.text=last.dtlLoc
+        holder.binding.tvMsg.text=last.mlFmlDvNm
         holder.binding.tvNumber.text=last.lnCd
+
+
     }
 
 }
