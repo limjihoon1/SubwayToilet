@@ -28,7 +28,7 @@ class ReviewFragment :Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(context, "asd", Toast.LENGTH_SHORT).show()
+
 
         binding.btn.setOnClickListener { clickBtnSave() }
 
