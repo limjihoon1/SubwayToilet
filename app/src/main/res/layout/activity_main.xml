@@ -11,7 +11,8 @@
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bnv"
-        app:backgroundTint="@color/white"/>
+        app:backgroundTint="@color/white"
+        app:itemIconTint="@color/black"/>
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"

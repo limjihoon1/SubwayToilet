@@ -54,6 +54,7 @@ public class MyMapFragment : Fragment() {
 
     private val mapShow: KakaoMapReadyCallback = object : KakaoMapReadyCallback() {
         override fun onMapReady(kakaoMap: KakaoMap) {
+
             val latitude: Double = (activity as MainActivity).myLocation?.latitude ?: 37.555
             val longitude: Double = (activity as MainActivity).myLocation?.longitude ?: 126.9746
             val mypos: LatLng = LatLng.from(latitude, longitude)
