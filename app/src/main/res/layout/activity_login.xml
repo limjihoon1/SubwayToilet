@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.MainActivity">
+    tools:context=".activites.MainActivity"
+    android:background="@color/white">
 
 
     <TextView
@@ -44,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="간편 로그인"
+        android:text=""
         android:textSize="16sp"
         android:layout_below="@id/tv_go"
         android:layout_marginTop="80dp"/>
@@ -60,17 +61,17 @@
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/icon_kakako"
+            android:src="@color/white"
             android:layout_marginLeft="16dp"/>
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/icon_google"
+            android:src="@color/white"
             android:layout_marginLeft="16dp"/>
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/icon_naver"
+            android:src="@color/white"
             android:layout_marginLeft="16dp"/>
     </LinearLayout>
     <LinearLayout

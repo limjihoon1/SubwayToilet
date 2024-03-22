@@ -13,20 +13,21 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/reviewbg"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background" />
 
-            />
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="역이름 :"
+            android:text="검색하신 지하철역 결과 입니다"
             android:textStyle="bold"
             android:textColor="@color/black"
         />

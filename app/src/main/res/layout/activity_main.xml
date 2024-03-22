@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.MainActivity">
+    tools:context=".activites.MainActivity"
+    android:backgroundTint="@color/white">
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bnv"
-        app:backgroundTint="@color/white"
-        app:itemIconTint="@color/black"/>
+        app:backgroundTint="@color/black"
+        app:itemIconTint="@color/white"
+
+        />
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -38,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="검색"
-
+            android:backgroundTint="@color/black"
 
             />
 

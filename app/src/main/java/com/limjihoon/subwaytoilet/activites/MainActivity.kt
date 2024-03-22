@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
     var e = "322"
     var lastData: Accc? = null
     var kakaoData:KakaoData?=null
+    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

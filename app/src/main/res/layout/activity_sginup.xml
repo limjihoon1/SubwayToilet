@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activites.MainActivity">
+    tools:context=".activites.MainActivity"
+    android:backgroundTint="@color/white">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolvar"
         android:layout_width="match_parent"
@@ -70,6 +71,8 @@
         android:layout_below="@id/layout_input_pwcon"
         android:layout_marginLeft="80dp"
         android:text="회원가입"
+        android:backgroundTint="@color/black"
+
         />
 
 
